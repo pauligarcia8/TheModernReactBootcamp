@@ -18,3 +18,41 @@ Basic Rules:
 **Properties** aka PROPS allows us to make our components more customizables.
 - Props are for configuring your component, for passing data in from a parent that help customize or configure a child component
 - Properties are inmutable 
+## Section 4: Introducing Create React App
+Basic comands
+```
+npx create-react-app my-app
+npm start
+```
+## Section 4: Pokedex
+See at https://github.com/pauligarcia8/Pokedex-game
+## Section 5: Introducing State
+- Internal data specific to a component.
+- Data that change over time!
+A great way to think about state is to think of games, fos instance chess. At any point in time, the board is in a complex state. Every new move represents a single discrete state change.
+If your component have a state you need tThe basic standard React constructor, wich is the next:  
+constructor(props) {  
+    super(props);  
+    this.state =  {  
+            /* values we want to track */  
+        };
+    }
+}
+
+- constructor takes one argument, props
+- you must call super(props) at start of constructor, wich "register" your class as a React Component
+- Inside the instance methods, you can refer to this.state just like you did this.props
+### this.setState() 
+is the built-in React method of changing a component's state. There's a couple of options for how we call it, the first on is:
+1. an object:
+this.setState({ playerName: 'Matt', score: 0}). 
+- Can call in any instance method except the constructor
+- Takes an object state describing the state changes
+- Patches state object - keys that you didnt specify dont change
+- Asynchronus
+    - The component state will eventually update
+    - React controls when the state will actually change, for performance reasons.
+- Componenets re-render when their state changes
+### React Events
+State most commonly changes in direct response to some event. In react, every JSX element has built-in attributes representing every king of browser event. They are camel-cased, like *onClick* and take callback functions as event listeners.
+`<button onClick={function(e){alert('You clicked me');}}>Click Me!</button>`
